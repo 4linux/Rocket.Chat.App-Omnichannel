@@ -1,0 +1,15 @@
+{
+    "id": "55a206af-a2f6-46af-bcd4-284263895a77",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "4Linux",
+        "homepage": "https://github.com/4linux/Rocket.Chat.App-Omnichannel",
+        "support": "https://github.com/4linux/Rocket.Chat.App-Omnichannel"
+    },
+    "name": "Rocket.Chat.App-Omnichannel",
+    "nameSlug": "rocketchatapp-omnichannel",
+    "classFile": "RocketChatAppOmnichannelApp.ts",
+    "description": "Adiciona funcionalidades ao Omnichannel"
+}
