@@ -17,7 +17,7 @@ import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
 import { LivechatAgentAssignedService } from './src/services/LivechatAgentAssignedService';
 import { LivechatRoomTransferredService } from './src/services/LivechatRoomTransferredService';
 import { MessageSentService } from './src/services/MessageSentService';
-import { SETTINGS } from './src/settings/settings';
+import { CONFIG_MESSAGE_ADD_AGENT_NAME, CONFIG_NOTIFY_AGENT_ASSIGNED, CONFIG_NOTIFY_ROOM_TRANSFERRED, getSettingValue, SETTINGS } from './src/settings/settings';
 export class RocketChatAppOmnichannelApp
     extends App
     implements IPreMessageSentModify, IPostLivechatRoomTransferred, IPostLivechatAgentAssigned {
@@ -45,6 +45,12 @@ export class RocketChatAppOmnichannelApp
         persis: IPersistence,
         modify: IModify,
     ): Promise<void> {
+        const allowExecute = await getSettingValue(read.getEnvironmentReader(), CONFIG_NOTIFY_AGENT_ASSIGNED);
+
+        if (!allowExecute) {
+            return;
+        }
+
         await this.livechatAgentAssignedService.executePost(context, read, modify);
     }
 
@@ -55,6 +61,12 @@ export class RocketChatAppOmnichannelApp
         persis: IPersistence,
         modify: IModify,
     ): Promise<void> {
+        const allowExecute = await getSettingValue(read.getEnvironmentReader(), CONFIG_NOTIFY_ROOM_TRANSFERRED);
+
+        if (!allowExecute) {
+            return;
+        }
+
         await this.livechatRoomTransferredService.executePost(context, read, modify);
     }
 
@@ -65,6 +77,12 @@ export class RocketChatAppOmnichannelApp
         http: IHttp,
         persistence: IPersistence,
     ): Promise<IMessage> {
+        const allowExecute = await getSettingValue(read.getEnvironmentReader(), CONFIG_MESSAGE_ADD_AGENT_NAME);
+
+        if (!allowExecute) {
+            return builder.getMessage();
+        }
+
         return this.messageSentService.executePre(message, builder);
     }
 
