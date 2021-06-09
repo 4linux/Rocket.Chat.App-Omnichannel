@@ -1,0 +1,8 @@
+{
+    "config_notify_agent_assigned_label": "Notificação agente atríbuido",
+    "config_notify_agent_assigned_description": "Notificar usuário (cliente) do Omnichannel quando um novo agente for atribudi pra sala.",
+    "config_notify_room_transferred_label": "Notificação transferência de sala",
+    "config_notify_room_transferred_description": "Notificar usuário (cliente) do Omnichannel quando a sala for transferida.",
+    "config_message_add_agent_name_label": "Informar nome do atendente",
+    "config_message_add_agent_name_description": "Na primeira mensagem de uma sequência de mensagens do atendente, adicionar antes do texto o seu nome para informar com quem está sendo realizado a conversa."
+}
