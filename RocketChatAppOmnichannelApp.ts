@@ -10,7 +10,7 @@ import {
     IRead,
 } from '@rocket.chat/apps-engine/definition/accessors';
 import { App } from '@rocket.chat/apps-engine/definition/App';
-import { ILivechatEventContext, ILivechatTransferEventContext, IPostLivechatAgentAssigned, IPostLivechatRoomTransferred, LivechatTransferEventType } from '@rocket.chat/apps-engine/definition/livechat';
+import { ILivechatEventContext, ILivechatTransferEventContext, IPostLivechatAgentAssigned, IPostLivechatRoomTransferred } from '@rocket.chat/apps-engine/definition/livechat';
 import { IMessage, IPreMessageSentModify } from '@rocket.chat/apps-engine/definition/messages';
 import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
 

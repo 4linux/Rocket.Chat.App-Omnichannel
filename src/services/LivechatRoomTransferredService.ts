@@ -11,7 +11,7 @@ export class LivechatRoomTransferredService {
         }
 
         const messageText = context.type === LivechatTransferEventType.AGENT ?
-            `*Você foi transferido um outro atendente.*` :
+            `*Você foi transferido para outro atendente.*` :
             `*Você foi transferido para o departamento ${context.to.name}.*`;
 
         const appUser = await read.getUserReader().getAppUser() as IUser;
